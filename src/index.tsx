@@ -1,13 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './Pages/App'
+import App from './pages/App'
 import reportWebVitals from './reportWebVitals'
-import GlobalStyles from 'Styles/global'
+import GlobalStyles from 'styles/global'
+import { store } from './app/store'
+import { Provider } from 'react-redux'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    <GlobalStyles />
+    <Provider store={store}>
+      <App />
+      <GlobalStyles />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 )
